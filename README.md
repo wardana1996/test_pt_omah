@@ -6,10 +6,12 @@ step by step
 
 endpoint <br>
 1. post / 127.0.0.1:8000/api/user/checkout <br>
-3. post / 127.0.0.1:8000/api/user/checkout/detail <br>
-4. post / 127.0.0.1:8000/api/user/checkout/detail_all <br>
-5. get / 127.0.0.1:8000/api/seller/order <br>
-6. post / 127.0.0.1:8000/api/seller/confirmed <br>
-7. get / 127.0.0.1:8000/api/admin/order <br>
-8. post / 127.0.0.1:8000/api/admin/nonactive <br>
-9. post / 127.0.0.1:8000/api/admin/order/delete <br>
+2. post / 127.0.0.1:8000/api/user/checkout/detail <br>
+3. post / 127.0.0.1:8000/api/user/checkout/detail_all <br>
+4. get / 127.0.0.1:8000/api/seller/order <br>
+5. post / 127.0.0.1:8000/api/seller/confirmed <br>
+6. get / 127.0.0.1:8000/api/admin/order <br>
+7. post / 127.0.0.1:8000/api/admin/nonactive <br>
+8. post / 127.0.0.1:8000/api/admin/order/delete <br>
+
+note : untuk method post sesuaikan dengan request yang ada di controller
