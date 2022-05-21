@@ -75,7 +75,7 @@ class userController extends Controller
             return response()->json(['message' => 'user not found  or user is nonactive !']);
         }
 
-        $detailOrder = Order::where('invoice', $request->invoice)->where('user_id', $user['id'])->first();
+        $detailOrder = Order::where('invoice', $request->invoice)->where('user_id', $user['id'])->get();
 
         if (is_null($detailOrder)) {
             return response()->json(['message' => 'data not found']);
