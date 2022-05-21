@@ -17,12 +17,7 @@ class userController extends Controller
 
         DB::beginTransaction();
 
-        $today = Carbon::now();
-        $invoiceNumber = Order::max('order_id');
-        $code = (int) substr($invoiceNumber, 3, 3);
-        $code++;
-        $char = "INV-";
-        $invoice = $char . sprintf("%03s", $code);
+        $currentInvoice = Order::orderBy('order_id', 'desc')->first()['order_id'] + 1;
 
         $user = User::where('id',$request->user_id)->where('is_active',true)->first();
 
@@ -47,7 +42,7 @@ class userController extends Controller
             $order = new Order();
             $order->product_code = $request->product_code;
             $order->user_id = $user['id'];
-            $order->invoice = $invoice;
+            $order->invoice = 'INV-00'.$currentInvoice;
             $order->qty = $request->qty;
             $order->price = $request->price;
             $order->date_order = Carbon::now();
